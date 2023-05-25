@@ -1,0 +1,28 @@
+.tracker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.timer {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  background-color: lightgray;
+  animation: progress-bar-animation 60s linear infinite;
+}
+
+
+@keyframes progress-bar-animation {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}

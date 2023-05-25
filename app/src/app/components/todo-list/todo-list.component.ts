@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Todo } from './todo'; // Přidejte import rozhraní Todo
 
 @Component({
   selector: 'app-todo-list',
@@ -13,23 +14,23 @@ export class TodoListComponent {
     if (this.newTodo) {
       const todo: Todo = {
         task: this.newTodo,
-        completed: false
+        completed: false,
+        time: 0, // Přidejte časový atribut pro tracker
       };
-      this.todos.push(todo); // Přidání nového úkolu do pole
-      this.newTodo = ''; // Vymazání hodnoty vstupního pole
+      this.todos.push(todo);
+      this.newTodo = '';
     }
   }
-  
+
   deleteTodo(index: number) {
-    this.todos.splice(index, 1); // Odstranění úkolu z pole podle indexu
+    this.todos.splice(index, 1);
   }
 
   toggleCompleted(index: number) {
-    this.todos[index].completed = !this.todos[index].completed; // Přepnutí stavu hotovosti úkolu
+    this.todos[index].completed = !this.todos[index].completed;
   }
-}
 
-interface Todo {
-  task: string;
-  completed: boolean;
+  updateTime(index: number, time: number) {
+    this.todos[index].time = time;
+  }
 }

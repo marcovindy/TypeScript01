@@ -7,18 +7,23 @@ import { TestComponentComponent } from './components/test-component/test-compone
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { TrackerComponent } from './tracker/tracker.component';
+import { NgProgressModule } from 'ngx-progressbar';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponentComponent,
-    TodoListComponent
+    TodoListComponent,
+    TrackerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    NgProgressModule
   ],
   providers: [],
   bootstrap: [AppComponent]

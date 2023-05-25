@@ -20,4 +20,8 @@ li {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.w-40px {
+  width: 100px;
 }/*# sourceMappingURL=todo-list.component.css.map */

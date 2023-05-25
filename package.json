@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^5.2.3",
+    "ngx-progressbar": "^11.0.0",
     "typescript": "^5.0.4"
   }
 }
