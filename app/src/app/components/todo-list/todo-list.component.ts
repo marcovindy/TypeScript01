@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Todo } from './todo'; // Přidejte import rozhraní Todo
+import { Todo } from './todo';
 
 @Component({
   selector: 'app-todo-list',
@@ -7,18 +7,20 @@ import { Todo } from './todo'; // Přidejte import rozhraní Todo
   styleUrls: ['./todo-list.component.css'],
 })
 export class TodoListComponent {
-  todos: Todo[] = []; // Pole pro ukládání TODO úkolů
-  newTodo: string = ''; // Proměnná pro ukládání nového úkolu
+  todos: Todo[] = [];
+  newTodo: string = '';
+  newTodoTime: number = 0; // Nová proměnná pro ukládání odhadovaného času
 
   addTodo() {
     if (this.newTodo) {
       const todo: Todo = {
         task: this.newTodo,
         completed: false,
-        time: 0, // Přidejte časový atribut pro tracker
+        time: this.newTodoTime, // Přiřazení odhadovaného času
       };
       this.todos.push(todo);
       this.newTodo = '';
+      this.newTodoTime = 0; // Resetování hodnoty odhadovaného času
     }
   }
 
