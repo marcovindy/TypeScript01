@@ -1,0 +1,23 @@
+h2 {
+  color: blue;
+}
+
+form {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.completed {
+  background-color: lightgreen;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}/*# sourceMappingURL=todo-list.component.css.map */

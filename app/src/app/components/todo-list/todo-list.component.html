@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>TODO List</h2>
+
+  <div class="row">
+    <div class="col">
+      <!-- Formulář pro přidání nového úkolu -->
+      <form (ngSubmit)="addTodo()" class="mb-3">
+        <div class="input-group">
+          <input
+            [(ngModel)]="newTodo"
+            name="newTodo"
+            type="text"
+            class="form-control"
+            placeholder="Nový úkol"
+          />
+          <button type="submit" class="btn btn-primary">Přidat</button>
+        </div>
+      </form>
+    </div>
+    <div class="col">
+      <!-- Seznam TODO úkolů -->
+      <ul class="list-group">
+        <li
+          class="cursor-pointer list-group-item justify-content-between d-flex"
+          *ngFor="let todo of todos; let i = index"
+          [class.completed]="todo.completed"
+          (click)="toggleCompleted(i)"
+        >
+          <span>{{ todo.task }}</span>
+          <button (click)="deleteTodo(i)" class="btn btn-danger btn-sm">
+            Odstranit
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
